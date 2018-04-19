@@ -1,6 +1,6 @@
 # WordPress WPO Collection
 
-This plugin core is shared by professional WordPress performance optimization plugins to achieve single plugin performance.
+This plugin core is shared by WordPress performance optimization plugins to achieve single plugin performance.
 
 The Website Performance Optimization (WPO) collection includes [CSS](https://github.com/o10n-x/wordpress-css-optimization), [Javascript](https://github.com/o10n-x/wordpress-javascript-optimization), [HTML](https://github.com/o10n-x/wordpress-html-optimization), [Web Font](https://github.com/o10n-x/wordpress-font-optimization), [HTTP/2](https://github.com/o10n-x/wordpress-http2-optimization), [Progressive Web App (Service Worker)](https://github.com/o10n-x/wordpress-pwa-optimization) and [Security Header](https://github.com/o10n-x/wordpress-security-header-optimization) optimization. 
 
