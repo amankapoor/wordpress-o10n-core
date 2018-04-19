@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/o10n-x/wordpress-css-optimization.svg?branch=master)](https://travis-ci.org/o10n-x/wordpress-css-optimization)
-
 # WordPress WPO Collection
 
 This plugin core is shared by professional WordPress performance optimization plugins to achieve single plugin performance.
