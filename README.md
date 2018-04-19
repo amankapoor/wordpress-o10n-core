@@ -1,6 +1,6 @@
 # WordPress WPO Collection
 
-This plugin core is shared by WordPress performance optimization plugins to achieve single plugin performance.
+This repository contains the optimization plugin core that is shared by WordPress performance optimization plugins to achieve single plugin performance.
 
 **This is not a WordPress plugin! This repository is for development purposes only.**
 
