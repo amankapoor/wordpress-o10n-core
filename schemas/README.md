@@ -2,7 +2,7 @@
 
 The WPO optimization plugins are based on JSON schema configuration that enables full control of the optimization using a simple JSON document.
 
-This directory contains the JSON schema source files that are used by the plugin to verify and store the configuration. The files can be used to understand the many avaialable, and potentially undocumented, options.
+This directory contains the JSON schema source files that are used by the optimization plugins to verify and store optimization settings. The files can be used to understand the many avaialable, and potentially undocumented, options.
 
 ## Advantages of JSON configuration
 
