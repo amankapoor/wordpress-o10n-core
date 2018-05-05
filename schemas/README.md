@@ -1,8 +1,10 @@
 # JSON shema configuration
 
-The WPO optimization plugins are based on JSON schema configuration that enables full control of the optimization using a simple JSON document.
+The WPO optimization plugins are based on JSON schema based configuration that enables full control of the optimization using JSON.
 
 This directory contains the JSON schema source files that are used by the optimization plugins to verify and store optimization settings. The files can be used to understand the many avaialable, and potentially undocumented, options.
+
+![JSON Editor](https://github.com/o10n-x/wordpress-o10n-core/blob/master/docs/images/json-editor.png)
 
 ## Advantages of JSON configuration
 
