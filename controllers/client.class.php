@@ -192,8 +192,8 @@ class Client extends Controller implements Controller_Interface
      */
     final public function add_html($HTML)
     {
-        // no <head> tag, skip
-        if (stripos($HTML, '<head>') === false && stripos($HTML, '<head ') === false) {
+        // no <head> or <html> tag, skip
+        if (stripos($HTML, '<head>') === false && stripos($HTML, '<head ') === false && stripos($HTML, '<html ') === false) {
             return $HTML;
         }
 
@@ -261,7 +261,7 @@ class Client extends Controller implements Controller_Interface
             ksort($this->loaded_modules);
  
             // debug mode
-            $js_ext = (defined('O10N_DEBUG') && O10N_DEBUG) ? '.debug.js' : '.js';
+            $js_ext = ($this->env->is_debug()) ? '.debug.js' : '.js';
 
             // base client
             $o10n_client_base = O10N_CORE_PATH . 'public/js/o10n' . $js_ext;
@@ -299,6 +299,8 @@ class Client extends Controller implements Controller_Interface
                 foreach ($sources as $source) {
                     if (file_exists($source)) {
                         $iife_clients[$version] .= file_get_contents($source);
+                    } else {
+                        throw new Exception('Client source not found: ' . $this->file->safe_path($source), 'core', true);
                     }
                 }
                 $iife_clients[$version] .= '}();';
@@ -670,11 +672,23 @@ class Client extends Controller implements Controller_Interface
      */
     final public function print_exception($category, $error)
     {
-        $config_index = $this->config_index('global', 'exceptions');
+        $data = & $this->loaded_config;
 
-        if (!isset($this->loaded_config[$config_index])) {
-            $this->loaded_config[$config_index] = array();
+        // config index key
+        try {
+            $config_index = $this->config_index('global');
+            $subconfig_index = $this->config_index('global', 'exceptions');
+        } catch (Exception $err) {
+            return false;
         }
-        $this->loaded_config[$config_index][] = array($category,$error);
+
+        if (!isset($data[$config_index])) {
+            $data[$config_index] = array();
+        }
+
+        if (!isset($data[$config_index][$subconfig_index])) {
+            $data[$config_index][$subconfig_index] = array();
+        }
+        $data[$config_index][$subconfig_index][] = array($category,$error);
     }
 }
